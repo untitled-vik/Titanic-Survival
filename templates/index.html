@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict Your chances of Survival on Titanic</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <p2>Passenger Class</p2>
+            <select name="PassengerClass" id="PassengerClass">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <br>
+            <input type="number" name="Age" id="Age" placeholder="Age">
+            <br>
+            <p2>SibSp</p2>
+            <select name="SibSp" id="SibSp">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+              <br>
+              <p2>Parch</p2>
+              <select name="Parch" id="Parch">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+              <br>
+
+            <input type="number" name="Fare" id="Fare" placeholder="Fare">
+            <br>
+            <p2>Gender</p2>
+            <select name="Gender" id="Gender">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+            <br>
+              <p2>Embarked</p2>
+              <select name="Embarked" id="Embarked">
+                <option value="C">C</option>
+                <option value="Q">Q</option>
+                <option value="S">S</option>
+              </select>
+              <br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
